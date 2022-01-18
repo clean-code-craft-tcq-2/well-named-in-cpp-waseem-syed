@@ -32,8 +32,8 @@ namespace TeleColorCoder
             std::string ToString();
     };
 
-    static ColorPair GetColorFromPairNumber(int pairNumber);
-    static int GetPairNumberFromColor(MajorColor major, MinorColor minor);
+    ColorPair GetColorFromPairNumber(int pairNumber);
+    int GetPairNumberFromColor(MajorColor major, MinorColor minor);
 }
 #endif//TELECOLORCODER_H_
 
