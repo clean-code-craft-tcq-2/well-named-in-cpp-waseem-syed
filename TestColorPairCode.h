@@ -1,3 +1,6 @@
+#ifndef TESTCOLORPAIRCODE_H_
+#define TESTCOLORPAIRCODE_H_
+
 #include <assert.h>
 #include "TeleColorCoder.h"
 #include <iostream>
@@ -25,3 +28,4 @@ void TestColorPairCode::testPairToNumber(TeleColorCoder::MajorColor major, TeleC
    std::cout << "Got pair number " << pairNumber << std::endl;
    assert(pairNumber == expectedPairNumber);
 }
+#endif//TESTCOLORPAIRCODE_H_
