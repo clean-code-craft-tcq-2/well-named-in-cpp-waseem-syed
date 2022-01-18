@@ -3,8 +3,8 @@
 namespace TeleColorCoder
 {
 ColorPair::ColorPair(MajorColor majorColor, MinorColor minorColor)
-   : m_majorColor(major)
-   , m_minorColor(minor)
+   : m_majorColor(majorColor)
+   , m_minorColor(minorColor)
 {
 }
 
@@ -15,14 +15,14 @@ MajorColor ColorPair::getMajor()
 
 MinorColor ColorPair::getMinor()
 {
-   return minorColor;
+   return m_minorColor;
 }
 
 std::string ColorPair::ToString()
 {
-   std::string colorPairStr = MajorColorNames[majorColor];
+   std::string colorPairStr = MajorColorNames[m_majorColor];
    colorPairStr += " ";
-   colorPairStr += MinorColorNames[minorColor];
+   colorPairStr += MinorColorNames[m_minorColor];
    return colorPairStr;
 }
 
