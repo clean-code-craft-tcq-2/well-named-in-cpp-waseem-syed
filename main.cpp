@@ -1,7 +1,6 @@
 #include "TestColorPairCode.h"
-#include "TeleColorCoder.h"
 
-
+using namespace TeleColorCoder;
 int main() {
 	TestColorPairCode testColorPairCode;
 
