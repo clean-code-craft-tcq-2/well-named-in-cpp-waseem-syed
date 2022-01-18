@@ -18,7 +18,7 @@ TestColorPairCode::TestColorPairCode()
 {
 }
 
-~TestColorPairCode::TestColorPairCode()
+TestColorPairCode::~TestColorPairCode()
 {
 }
 
