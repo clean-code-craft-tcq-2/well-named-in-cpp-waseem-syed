@@ -14,6 +14,14 @@ public:
    void testPairToNumber(TeleColorCoder::MajorColor major, TeleColorCoder::MinorColor minor, int expectedPairNumber);
 };
 
+TestColorPairCode::TestColorPairCode()
+{
+}
+
+~TestColorPairCode::TestColorPairCode()
+{
+}
+
 void TestColorPairCode::testNumberToPair(int pairNumber, TeleColorCoder::MajorColor expectedMajor, TeleColorCoder::MinorColor expectedMinor)
 {
     TeleColorCoder::ColorPair colorPair = TeleColorCoder::GetColorFromPairNumber(pairNumber);
