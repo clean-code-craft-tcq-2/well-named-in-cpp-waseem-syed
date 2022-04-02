@@ -6,7 +6,7 @@ void displayColorCoding()
    {
       for (int minorColorIndex = 0; minorColorIndex < TeleCoColorCoder::MinorColorNames.size(); ++minorColorIndex)
       {
-	  std::cout<< MajorColorNames[majorColorIndex]<<"\t"<<MinorColorNames[minorColorIndex]<<"\t\t"<<majorColorIndex + 1<<" "<< majorColorIndex + 1<<"\n";
+	  std::cout<< TeleCoColorCoder::MajorColorNames[majorColorIndex]<<"\t"<<TeleCoColorCoder::MinorColorNames[minorColorIndex]<<"\t\t"<<majorColorIndex + 1<<" "<< majorColorIndex + 1<<"\n";
       }
       std::cout<<"\n";
    }
