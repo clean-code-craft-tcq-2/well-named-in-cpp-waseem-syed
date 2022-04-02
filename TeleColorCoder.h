@@ -1,7 +1,7 @@
 #include <iostream>
 #include <assert.h>
-#include <vector.h>
-#include <string.h>
+#include <vector>
+#include <string>
 
 namespace TeleColorCoder
 {
