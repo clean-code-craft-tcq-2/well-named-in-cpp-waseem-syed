@@ -32,8 +32,8 @@ void ColorPair::setMinorColor(MinorColor minorColor)
 std::string ColorPair::convertColorPairToString(ColorPair colorPair)
 {
    std::string colorPairAsString = MajorColorNames[colorPair.getMajorColor()];
-   colorPairToPrint += " ";
-   colorPairToPrint += MinorColorNames[colorPair.getMinorColor()];
+   colorPairAsString += " ";
+   colorPairAsString += MinorColorNames[colorPair.getMinorColor()];
    return colorPairAsString;
 }
 
