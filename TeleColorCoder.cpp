@@ -1,43 +1,56 @@
-#include "TeleColorCoder.h"
+#include <TeleColorCoder.h>
 
 namespace TeleColorCoder
 {
-ColorPair::ColorPair(MajorColor majorColor, MinorColor minorColor)
-   : m_majorColor(majorColor)
-   , m_minorColor(minorColor)
+ColorPair::ColorPair()
+{
+}
+~ColorPair::ColorPair()
 {
 }
 
-MajorColor ColorPair::getMajor()
+MajorColor ColorPair::getMajorColor()
 {
    return m_majorColor;
 }
 
-MinorColor ColorPair::getMinor()
+MinorColor ColorPair::getMinorColor()
 {
    return m_minorColor;
 }
 
-std::string ColorPair::ToString()
+void ColorPair::setMajorColor(MajorColor majorColor)
 {
-   std::string colorPairStr = MajorColorNames[m_majorColor];
-   colorPairStr += " ";
-   colorPairStr += MinorColorNames[m_minorColor];
-   return colorPairStr;
+	m_majorColor = majorColor;
+}
+
+void ColorPair::setMinorColor(MinorColor minorColor)
+{
+	m_minorColor = minorColor;
+}
+
+std::string ColorPair::convertColorPairToString(ColorPair colorPair)
+{
+   std::string colorPairAsString = MajorColorNames[colorPair.getMajorColor()];
+   colorPairToPrint += " ";
+   colorPairToPrint += MinorColorNames[colorPair.getMinorColor()];
+   return colorPairAsString;
 }
 
 ColorPair GetColorFromPairNumber(int pairNumber)
 {
+   ColorPair colorPair;
    int zeroBasedPairNumber = pairNumber - 1;
-   MajorColor majorColor = 
-   (MajorColor)(zeroBasedPairNumber / numberOfMinorColors);
-   MinorColor minorColor = (MinorColor)(zeroBasedPairNumber % numberOfMinorColors);
-   return ColorPair(majorColor, minorColor);
+   MajorColor majorColor = (MajorColor)(zeroBasedPairNumber / m_numberOfMinorColors);
+   colorPair.setMajorColor(majorColor);
+   MinorColor minorColor = (MinorColor)(zeroBasedPairNumber % m_numberOfMinorColors);
+   colorPair.setMinorColor(minorColor);
+   return colorPair;
 }
 
-int GetPairNumberFromColor(MajorColor major, MinorColor minor)
+int GetPairNumberFromColor(ColorPair colorPair)
 {
-   return major * numberOfMinorColors + minor + 1;
+   return colorPair.getMajorColor() * m_numberOfMinorColors + colorPair.getMinorColor() + 1;
 }
 
 }//TeleColorCoder
