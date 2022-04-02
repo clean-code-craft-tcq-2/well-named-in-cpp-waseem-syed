@@ -2,13 +2,13 @@
 
 void displayColorCoding()
 {
-   for (int majorColorIndex = 0; majorColorIndex < MajorColorNames.size(); ++majorColorIndex)
+   for (int majorColorIndex = 0; majorColorIndex < TeleCoColorCoder::MajorColorNames.size(); ++majorColorIndex)
    {
-      for (int minorColorIndex = 0; minorColorIndex < MinorColorNames.size(); ++minorColorIndex)
+      for (int minorColorIndex = 0; minorColorIndex < TeleCoColorCoder::MinorColorNames.size(); ++minorColorIndex)
       {
-	  cout<< MajorColorNames[majorColorIndex]<<"\t"<<MinorColorNames[minorColorIndex]<<"\t\t"<<indexMajorColor + 1<<" "<< indexMinorColor + 1<<"\n";
+	  std::cout<< MajorColorNames[majorColorIndex]<<"\t"<<MinorColorNames[minorColorIndex]<<"\t\t"<<majorColorIndex + 1<<" "<< majorColorIndex + 1<<"\n";
       }
-      cout<<"\n";
+      std::cout<<"\n";
    }
 }
 int main() {
