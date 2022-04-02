@@ -1,6 +1,6 @@
 #include "TeleColorCoder.h"
 
-namespace TeleColorCoder
+namespace TeleCoColorCoder
 {
 ColorPair::ColorPair()
 {
@@ -53,5 +53,5 @@ int GetPairNumberFromColor(ColorPair colorPair)
    return colorPair.getMajorColor() * m_numberOfMinorColors + colorPair.getMinorColor() + 1;
 }
 
-}//TeleColorCoder
+}//TeleCoColorCoder
 

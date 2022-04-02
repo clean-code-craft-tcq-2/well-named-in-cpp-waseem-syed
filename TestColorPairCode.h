@@ -1,5 +1,5 @@
-#ifndef TESTCOLORPAIRCODE_H
-#define TESTCOLORPAIRCODE_H
+#ifndef TESTCOLORPAIRCODE_H_
+#define TESTCOLORPAIRCODE_H_
 #include <assert.h>
 #include <string>
 #include <iostream>
@@ -10,8 +10,8 @@ class TestColorPairCode
 public:
    TestColorPairCode();
    ~TestColorPairCode();
-   void testNumberToPair(int pairNumber, TeleColorCoder::MajorColor expectedMajor, TeleColorCoder::MinorColor expectedMinor);
-   void testPairToNumber(TeleColorCoder::MajorColor majorColor, TeleColorCoder::MinorColor minorColor, int expectedPairNumber);
+   void testNumberToPair(int pairNumber, TeleCoColorCoder::MajorColor expectedMajor, TeleCoColorCoder::MinorColor expectedMinor);
+   void testPairToNumber(TeleCoColorCoder::MajorColor majorColor, TeleCoColorCoder::MinorColor minorColor, int expectedPairNumber);
 };
 
 TestColorPairCode::TestColorPairCode()
@@ -20,21 +20,21 @@ TestColorPairCode::TestColorPairCode()
 TestColorPairCode::~TestColorPairCode()
 {
 }
-void TestColorPairCode::testNumberToPair(int pairNumber, TeleColorCoder::MajorColor expectedMajor, TeleColorCoder::MinorColor expectedMinor)
+void TestColorPairCode::testNumberToPair(int pairNumber, TeleCoColorCoder::MajorColor expectedMajor, TeleCoColorCoder::MinorColor expectedMinor)
 {
-    TeleColorCoder::ColorPair colorPair = TeleColorCoder::GetColorFromPairNumber(pairNumber);
+    TeleCoColorCoder::ColorPair colorPair = TeleCoColorCoder::GetColorFromPairNumber(pairNumber);
     std::string  colorPairAsString = colorPair.convertColorPairToString(colorPair);
     std::cout << "Got pair " << colorPairAsString << std::endl;
     assert(colorPair.getMajorColor() == expectedMajor);
     assert(colorPair.getMinorColor() == expectedMinor);
 }
 
-void TestColorPairCode::testPairToNumber(TeleColorCoder::MajorColor majorColor, TeleColorCoder::MinorColor minorColor, int expectedPairNumber)
+void TestColorPairCode::testPairToNumber(TeleCoColorCoder::MajorColor majorColor, TeleCoColorCoder::MinorColor minorColor, int expectedPairNumber)
 {
-   TeleColorCoder::ColorPair colorPair;
+   TeleCoColorCoder::ColorPair colorPair;
    colorPair.setMajorColor(majorColor);
    colorPair.setMinorColor(minorColor);
-   int pairNumber = TeleColorCoder::GetPairNumberFromColor(colorPair);
+   int pairNumber = TeleCoColorCoder::GetPairNumberFromColor(colorPair);
    std::cout << "Got pair number " << pairNumber << std::endl;
    assert(pairNumber == expectedPairNumber);
 }

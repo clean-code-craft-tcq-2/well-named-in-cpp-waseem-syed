@@ -1,12 +1,10 @@
-#ifndef TELECOLORCODER_H_
-#define TELECOLORCODER_H_
+#ifndef TELECOLORCODER_H
+#define TELECOLORCODER_H
 
-#include <iostream>
-#include <assert.h>
 #include <vector>
 #include <string>
 
-namespace TeleColorCoder
+namespace TeleCoColorCoder
 {
     enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
     enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
@@ -33,4 +31,4 @@ namespace TeleColorCoder
     ColorPair GetColorFromPairNumber(int pairNumber);
     int GetPairNumberFromColor(ColorPair colorPair);
 }
-#endif		//TELECOLORCODER_H_
+#endif		//TELECOLORCODER_H
