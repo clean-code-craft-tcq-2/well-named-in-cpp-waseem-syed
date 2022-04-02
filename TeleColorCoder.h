@@ -1,5 +1,5 @@
-#ifndef TELECOLORCODER_H_
-#define TELECOLORCODER_H_
+#ifndef TELECOLORCODER_H
+#define TELECOLORCODER_H
 
 #include <vector>
 #include <string>
@@ -19,16 +19,50 @@ namespace TeleCoColorCoder
             MajorColor m_majorColor;
             MinorColor m_minorColor;
         public:
-            ColorPair();
-			~ColorPair();
-            MajorColor getMajorColor();
-            MinorColor getMinorColor();
-		    void setMajorColor(MajorColor majorColor);
-            void setMinorColor(MinorColor minorColor);
-            std::string convertColorPairToString(ColorPair colorPair);
+            ColorPair()
+			{
+			}
+			~ColorPair()
+			{
+			}
+            MajorColor getMajorColor()
+			{
+			   return m_majorColor;
+			}
+            MinorColor getMinorColor()
+			{
+			   return m_minorColor;
+			}
+		    void setMajorColor(MajorColor majorColor)
+			{
+			   m_majorColor = majorColor;
+			}
+            void setMinorColor(MinorColor minorColor)
+			{
+			   m_minorColor = minorColor;
+			}
+            std::string convertColorPairToString(ColorPair colorPair)
+			{
+			   std::string colorPairAsString = MajorColorNames[colorPair.getMajorColor()];
+               colorPairAsString += " ";
+               colorPairAsString += MinorColorNames[colorPair.getMinorColor()];
+               return colorPairAsString;
+			}
     };
 
-    ColorPair GetColorFromPairNumber(int pairNumber);
-    int GetPairNumberFromColor(ColorPair colorPair);
+    ColorPair GetColorFromPairNumber(int pairNumber)
+	{
+	   ColorPair colorPair;
+       int zeroBasedPairNumber = pairNumber - 1;
+       MajorColor majorColor = (MajorColor)(zeroBasedPairNumber / m_numberOfMinorColors);
+       colorPair.setMajorColor(majorColor);
+       MinorColor minorColor = (MinorColor)(zeroBasedPairNumber % m_numberOfMinorColors);
+       colorPair.setMinorColor(minorColor);
+       return colorPair;
+	}
+    int GetPairNumberFromColor(ColorPair colorPair)
+	{
+		return colorPair.getMajorColor() * m_numberOfMinorColors + colorPair.getMinorColor() + 1;
+	}
 }
-#endif		//TELECOLORCODER_H_
+#endif		//TELECOLORCODER_H
