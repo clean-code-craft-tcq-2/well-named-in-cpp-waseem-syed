@@ -8,9 +8,9 @@ namespace TeleColorCoder
     enum MajorColor {WHITE, RED, BLACK, YELLOW, VIOLET};
     enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
 
-	std::vector<string > MajorColorNames {"White", "Red", "Black", "Yellow", "Violet"};
+	std::vector<std::string > MajorColorNames {"White", "Red", "Black", "Yellow", "Violet"};
 	
-	std::vector<string > MinorColorNames {"Blue", "Orange", "Green", "Brown", "Slate"};
+	std::vector<std::string > MinorColorNames {"Blue", "Orange", "Green", "Brown", "Slate"};
     int m_numberOfMinorColors = MinorColorNames.size();
 	
     class ColorPair {

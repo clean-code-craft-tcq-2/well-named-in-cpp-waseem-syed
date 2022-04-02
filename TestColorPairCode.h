@@ -1,5 +1,7 @@
 #include <assert.h>
-#include <string.h>
+#include <string>
+#include <iostream>
+#include "TeleColorCoder.h"
 
 class TestColorPairCode
 {
