@@ -1,5 +1,5 @@
-#ifndef TELECOLORCODER_H
-#define TELECOLORCODER_H
+#ifndef TELECOLORCODER_H_
+#define TELECOLORCODER_H_
 
 #include <vector>
 #include <string>
@@ -31,4 +31,4 @@ namespace TeleCoColorCoder
     ColorPair GetColorFromPairNumber(int pairNumber);
     int GetPairNumberFromColor(ColorPair colorPair);
 }
-#endif		//TELECOLORCODER_H
+#endif		//TELECOLORCODER_H_
