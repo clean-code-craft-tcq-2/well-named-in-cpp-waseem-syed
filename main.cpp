@@ -1,6 +1,5 @@
 #include <iostream>
 #include "TestColorPairCode.h"
-#include "TeleColorCoder.h"
 
 
 int main() {
