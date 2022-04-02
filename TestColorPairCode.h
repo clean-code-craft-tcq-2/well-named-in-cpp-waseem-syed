@@ -1,3 +1,5 @@
+#ifndef TESTCOLORPAIRCODE_H
+#define TESTCOLORPAIRCODE_H
 #include <assert.h>
 #include <string>
 #include <iostream>
@@ -15,7 +17,7 @@ public:
 void TestColorPairCode::testNumberToPair(int pairNumber, TeleColorCoder::MajorColor expectedMajor, TeleColorCoder::MinorColor expectedMinor)
 {
     TeleColorCoder::ColorPair colorPair = TeleColorCoder::GetColorFromPairNumber(pairNumber);
-    std::string  colorPairAsString = colorPair.colorPairAsString();
+    std::string  colorPairAsString = colorPair.convertColorPairToString(colorPair);
     std::cout << "Got pair " << colorPairAsString << std::endl;
     assert(colorPair.getMajorColor() == expectedMajor);
     assert(colorPair.getMinorColor() == expectedMinor);
@@ -30,3 +32,5 @@ void TestColorPairCode::testPairToNumber(TeleColorCoder::MajorColor majorColor, 
    std::cout << "Got pair number " << pairNumber << std::endl;
    assert(pairNumber == expectedPairNumber);
 }
+
+#endif		//TESTCOLORPAIRCODE_H

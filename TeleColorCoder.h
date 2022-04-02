@@ -1,3 +1,6 @@
+#ifndef TELECOLORCODER_H
+#define TELECOLORCODER_H
+
 #include <iostream>
 #include <assert.h>
 #include <vector>
@@ -24,10 +27,10 @@ namespace TeleColorCoder
             MinorColor getMinorColor();
 		    void setMajorColor(MajorColor majorColor);
             void setMinorColor(MinorColor minorColor);
-            std::string convertColorPairToString();
+            std::string convertColorPairToString(ColorPair colorPair);
     };
 
     ColorPair GetColorFromPairNumber(int pairNumber);
     int GetPairNumberFromColor(ColorPair colorPair);
 }
-
+#endif		//TELECOLORCODER_H
