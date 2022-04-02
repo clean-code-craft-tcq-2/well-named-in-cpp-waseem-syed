@@ -1,7 +1,8 @@
 #include <iostream>
 #include "TestColorPairCode.h"
 
-using namespace TeleColorCoder;
+using namespace TeleColorCoder::MajorColor;
+using namespace TeleColorCoder::MinorColor;
 int main() {
 	TestColorPairCode testColorPairCode;
 
