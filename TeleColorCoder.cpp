@@ -5,7 +5,7 @@ namespace TeleColorCoder
 ColorPair::ColorPair()
 {
 }
-~ColorPair::ColorPair()
+ColorPair::~ColorPair()
 {
 }
 
