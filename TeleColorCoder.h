@@ -9,7 +9,6 @@ namespace TeleCoColorCoder
     enum MinorColor {BLUE, ORANGE, GREEN, BROWN, SLATE};
     std::vector<std::string > MajorColorNames {"White", "Red", "Black", "Yellow", "Violet"};
     std::vector<std::string > MinorColorNames {"Blue", "Orange", "Green", "Brown", "Slate"};
-    int m_numberOfMinorColors = MinorColorNames.size();
 	
     class ColorPair {
         private:
@@ -36,12 +35,12 @@ namespace TeleCoColorCoder
     ColorPair GetColorFromPairNumber(int pairNumber){
        ColorPair colorPair;
        int zeroBasedPairNumber = pairNumber - 1;
-       MajorColor majorColor = (MajorColor)(zeroBasedPairNumber / m_numberOfMinorColors);
+       MajorColor majorColor = (MajorColor)(zeroBasedPairNumber / MinorColorNames.size());
        colorPair.setMajorColor(majorColor);
-       MinorColor minorColor = (MinorColor)(zeroBasedPairNumber % m_numberOfMinorColors);
+       MinorColor minorColor = (MinorColor)(zeroBasedPairNumber % MinorColorNames.size());
        colorPair.setMinorColor(minorColor);
        return colorPair;}
     int GetPairNumberFromColor(ColorPair colorPair){
-	return colorPair.getMajorColor() * m_numberOfMinorColors + colorPair.getMinorColor() + 1;}
+	return colorPair.getMajorColor() * MinorColorNames.size() + colorPair.getMinorColor() + 1;}
 }
 #endif		//TELECOLORCODER_H_
