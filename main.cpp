@@ -5,11 +5,11 @@
 int main() {
 	TestColorPairCode testColorPairCode;
 
-    testColorPairCode.testNumberToPair(4, TeleColorCoder::WHITE, TeleColorCoder::BROWN);
-    testColorPairCode.testNumberToPair(5, TeleColorCoder::WHITE, TeleColorCoder::SLATE);
+    testColorPairCode.testNumberToPair(4, WHITE, BROWN);
+    testColorPairCode.testNumberToPair(5, WHITE, SLATE);
 
-    testColorPairCode.testPairToNumber(TeleColorCoder::BLACK, TeleColorCoder::ORANGE, 12);
-    testColorPairCode.testPairToNumber(TeleColorCoder::VIOLET, TeleColorCoder::SLATE, 25);
+    testColorPairCode.testPairToNumber(BLACK, ORANGE, 12);
+    testColorPairCode.testPairToNumber(VIOLET, SLATE, 25);
 
     return 0;
 }
